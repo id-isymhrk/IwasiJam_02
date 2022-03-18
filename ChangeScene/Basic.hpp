@@ -24,4 +24,4 @@ using App = SceneManager<State, GameData>;
 
 //全体用の関数
 void loading(double);		//ロードの表現
-State nameScene(int32);	//遷移するシーン名前を返す関数
+State sceneRandom(int32);	//遷移するシーン名前を返す関数

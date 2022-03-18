@@ -7,7 +7,7 @@ void loading(double t) {
 	Rect(200, 550, t, 30).draw(Palette::White);
 }
 
-State nameScene(int32 num) {
+State sceneRandom(int32 num) {
 	static int32 n = 0;
 
 	while (true) {
@@ -17,10 +17,19 @@ State nameScene(int32 num) {
 		}
 	}
 
-	switch (num)
+	switch (n)
 	{
 	case 1:
 		return State::ID01_Password;
+		break;
+	case 2:
+		return State::ID02_Load;
+		break;
+	case 3:
+		return State::ID03_Default;
+		break;
+	case 4:
+		return State::ID04_Inside;
 		break;
 	default:
 		break;
