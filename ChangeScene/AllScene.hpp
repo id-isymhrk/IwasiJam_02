@@ -4,9 +4,25 @@
 class Default : public App::Scene
 {
 private:
+	// 通常のフォントを作成 | Create a new font60
+	const Font font60;
+	// 絵文字用フォントを作成 | Create a new emoji font60
+	const Font emojiFont;
+
+	// 画像ファイルからテクスチャを作成 | Create a texture from an image file
+	const Texture texture;
+	// 絵文字からテクスチャを作成 | Create a texture from an emoji
+	const Texture emoji;
+
+	// 絵文字を描画する座標 | Coordinates of the emoji
+	Vec2 emojiPos{ 300, 150 };
+
 public:
-	Default();
-	~Default();
+	Default(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
 };
 
 
