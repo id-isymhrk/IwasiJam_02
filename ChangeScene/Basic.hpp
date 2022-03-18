@@ -1,0 +1,27 @@
+﻿#pragma once
+# include <Siv3D.hpp> // OpenSiv3D v0.6.3
+
+constexpr int32 NUM_SCENE = 4;
+
+//シーン名
+enum class State {
+	Title,
+	ID01_Password,
+	ID02_Load,
+	ID03_Default,
+	ID04_Inside,
+};
+
+//ゲームデータ
+struct GameData {
+	int32 Score;
+};
+
+//シーン管理
+using App = SceneManager<State, GameData>;
+
+
+
+//全体用の関数
+void loading(double);		//ロードの表現
+State nameScene(int32);	//遷移するシーン名前を返す関数
