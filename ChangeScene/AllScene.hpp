@@ -1,6 +1,28 @@
 ﻿#pragma once
 #include"Basic.hpp"
 
+class Password : public App::Scene
+{
+private:
+public:
+	Password(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+};
+
+class Load : public App::Scene
+{
+private:
+public:
+	Load(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+};
+
 class Default : public App::Scene
 {
 private:
@@ -25,4 +47,13 @@ public:
 	void debug();
 };
 
+class Inside : public App::Scene
+{
+private:
+public:
+	Inside(const InitData& init);
 
+	void update();
+	void draw() const;
+	void debug();
+};
