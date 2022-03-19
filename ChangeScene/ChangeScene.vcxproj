@@ -115,6 +115,7 @@
   <ItemGroup>
     <ClCompile Include="src\Basic.cpp" />
     <ClCompile Include="src\DefaultScene.cpp" />
+    <ClCompile Include="src\InsideScene.cpp" />
     <ClCompile Include="src\LoadScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Password.cpp" />
