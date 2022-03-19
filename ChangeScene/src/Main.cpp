@@ -4,6 +4,7 @@ void Main()
 {
 	App manager;
 	manager
+		.add<Password>(State::ID01_Password)
 		.add<Default>(State::ID03_Default);
 
 	while (System::Update())

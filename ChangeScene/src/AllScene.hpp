@@ -1,15 +1,28 @@
 ﻿#pragma once
 #include"Basic.hpp"
 
+constexpr Vec2 p(400, 500);
+
 class Password : public App::Scene
 {
 private:
+	const Font font15;
+	const Font font25;
+
+	const Rect box_text;
+
+	String text_input;
+
+	bool flag_hide = true;
+
 public:
 	Password(const InitData& init);
 
 	void update();
 	void draw() const;
 	void debug();
+
+	void hidePassword();
 };
 
 class Load : public App::Scene
