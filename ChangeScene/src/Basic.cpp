@@ -3,8 +3,10 @@
 
 //ロード描画用の関数
 void loading(double t) {
-	Rect(200, 550, 400, 30).drawFrame(1, 1, Palette::White);
-	Rect(200, 550, t, 30).draw(Palette::White);
+	ClearPrint();
+	Print << U"進行度:{}%"_fmt((int32)t / 4);
+	Rect(200, 500, 400, 30).drawFrame(1, 1, Palette::White);
+	Rect(200, 500, t, 30).draw(Palette::White);
 }
 
 State sceneRandom(int32 num) {
