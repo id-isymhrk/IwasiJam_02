@@ -118,6 +118,7 @@
     <ClCompile Include="src\LoadScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Password.cpp" />
+    <ClCompile Include="src\Title.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
