@@ -7,7 +7,8 @@ Default::Default(const InitData& init)
 	ClearPrint();
 
 	// テキストを画面にデバッグ出力 | Print a text
-	Print << U"Push [A] key";
+	Print << U"Push [Button] !!";
+	Print << U"You don't have to push [A] key";
 
 	// 背景の色を設定 | Set background color
 	Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
