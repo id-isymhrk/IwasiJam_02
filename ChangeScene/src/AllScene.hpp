@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include"Basic.hpp"
 
-constexpr Vec2 p(400, 500);
-
+//title
 constexpr int32 NUM_ARK = 4;
-
+//password
+constexpr Vec2 p(400, 500);
+//inside
 constexpr int32 RECT_EDGE = 240;
 
 class Title : public App::Scene
