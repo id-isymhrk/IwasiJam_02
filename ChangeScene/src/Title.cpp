@@ -10,6 +10,7 @@ Title::Title(const InitData& init)
 	for (int i = 0; i < NUM_ARK; i++) {
 		ark << Circle{ Scene::Width() / 2,Scene::Height() / 2,75 * (1 + i) };
 		angle << Random<double>(90_deg, 180_deg);
+
 		if (RandomBool(0.5)) {
 			angle << angle.back() + Random<double>(10_deg, 20_deg);
 			angle_speed << Random<double>(1_deg, 5_deg);
@@ -36,7 +37,12 @@ void Title::update() {
 			angle[i] += 360_deg;
 		}
 	}
-	debug();
+
+	if (SimpleGUI::ButtonAt(U"Game Start",Vec2(Scene::Width()/2,Scene::Height()/2+100))) {
+		changeScene(sceneRandom(0));
+	}
+
+	//debug();
 }
 
 void Title::draw() const {
