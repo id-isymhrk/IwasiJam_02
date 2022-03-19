@@ -3,6 +3,8 @@
 
 constexpr int32 NUM_SCENE = 4;
 
+const Font font_title{ FontMethod::SDF, 40, Typeface::Bold };
+
 //シーン名
 enum class State {
 	Title,
