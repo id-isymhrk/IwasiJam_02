@@ -3,13 +3,14 @@
 Password::Password(const InitData& init)
 	:IScene(init), font15(15), font25(25), box_text(Arg::center(400, 500), 400, 30)
 {
-
+	ClearPrint();
 }
 
 void Password::update() {
 	if (KeyEnter.down()) {
 		//シーン移動
-		changeScene(sceneRandom(1));
+		//changeScene(sceneRandom(1));
+		changeScene(State::ID03_Default);
 	}
 	else {
 		//パスワード入力

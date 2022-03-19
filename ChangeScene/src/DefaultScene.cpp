@@ -6,6 +6,9 @@ Default::Default(const InitData& init)
 {
 	ClearPrint();
 
+	// テキストを画面にデバッグ出力 | Print a text
+	Print << U"Push [A] key";
+
 	// 背景の色を設定 | Set background color
 	Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
 
@@ -49,6 +52,4 @@ void Default::debug() {
 		Print << Sample({ U"Hello!", U"こんにちは", U"你好", U"안녕하세요?" });
 	}
 
-	// テキストを画面にデバッグ出力 | Print a text
-	Print << U"Push [A] key";
 }
