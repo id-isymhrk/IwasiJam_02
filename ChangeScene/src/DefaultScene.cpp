@@ -27,6 +27,8 @@ void Default::update() {
 		// 画面内のランダムな場所に座標を移動
 		// Move the coordinates to a random position in the screen
 		emojiPos = RandomVec2(Scene::Rect());
+
+		changeScene(sceneRandom(3));
 	}
 
 	debug();

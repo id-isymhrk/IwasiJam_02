@@ -15,8 +15,8 @@ void Password::update() {
 	if (KeyEnter.down()) {
 		if (text_input.size() > 4) {
 			//シーン移動
-			//changeScene(sceneRandom(1));
-			changeScene(State::ID03_Default);
+			changeScene(sceneRandom(1));
+			//changeScene(State::ID03_Default);
 		}
 		else {
 			if (text_input) {

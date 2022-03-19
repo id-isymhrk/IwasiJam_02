@@ -9,7 +9,8 @@ Load::Load(const InitData& init)
 void Load::update() {
 	if (flag_loading) {
 		if (400 <= install) {
-			changeScene(State::Title);
+			//changeScene(State::Title);
+			changeScene(sceneRandom(2));
 		}
 		else {
 			install += 1.5;
