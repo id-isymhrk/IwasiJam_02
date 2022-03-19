@@ -10,10 +10,20 @@ Password::Password(const InitData& init)
 }
 
 void Password::update() {
+	static int32 miss_count = 0;
+
 	if (KeyEnter.down()) {
-		//シーン移動
-		//changeScene(sceneRandom(1));
-		changeScene(State::ID03_Default);
+		if (text_input.size() > 4) {
+			//シーン移動
+			//changeScene(sceneRandom(1));
+			changeScene(State::ID03_Default);
+		}
+		else {
+			if (text_input) {
+				text_input.clear();
+			}
+			Print << U"You missed password (total:{})"_fmt(++miss_count);
+		}		
 	}
 	else {
 		//パスワード入力
@@ -28,7 +38,7 @@ void Password::update() {
 void Password::draw() const {
 	box_text.draw(Palette::White);
 	font_guide(U"password:").drawAt(p.movedBy(-220, -30), Palette::White);
-	font_guide(U"[delete]:show / delete").draw(p.movedBy(50, 20), Palette::White);
+	font_guide(U"[delete]:show / hide").draw(p.movedBy(50, 20), Palette::White);
 	font_guide(U"[Enter] : finish").draw(p.movedBy(50, 40), Palette::White);
 
 	//パスワードを 隠す/隠さない 処理
