@@ -8,10 +8,6 @@ Default::Default(const InitData& init)
 
 	getData().Time.start();
 
-	// テキストを画面にデバッグ出力 | Print a text
-	Print << U"Push [Button] !!";
-	Print << U"You don't have to push [A] key";
-
 	// 背景の色を設定 | Set background color
 	Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
 
@@ -27,6 +23,14 @@ void Default::update() {
 		changeScene(State::Finish);
 	}
 	else {
+
+		// もし [A] キーが押されたら | When [A] key is down
+		if (KeyA.down())
+		{
+			// 選択肢からランダムに選ばれたメッセージをデバッグ表示 | Print a randomly selected text
+			Print << Sample({ U"Hello!", U"こんにちは", U"你好", U"안녕하세요?" });
+		}
+
 		// もし [Button] が押されたら | When [Button] is pushed
 		if (SimpleGUI::Button(U"Button", Vec2{ 640, 40 }))
 		{
@@ -42,10 +46,16 @@ void Default::update() {
 		}
 	}
 
-	debug();
+	//debug();
 }
 
 void Default::draw() const {
+	ClearPrint();
+	Print << U"Push [Button] !!";
+	Print << U"{} seconds later"_fmt(getData().Time.s());
+	// テキストを画面にデバッグ出力 | Print a text
+	Print << U"";
+	Print << U"You don't have to push [A] key";
 
 	// テクスチャを描く | Draw a texture
 	texture.draw(200, 200);
@@ -61,11 +71,6 @@ void Default::draw() const {
 }
 
 void Default::debug() {
-	// もし [A] キーが押されたら | When [A] key is down
-	if (KeyA.down())
-	{
-		// 選択肢からランダムに選ばれたメッセージをデバッグ表示 | Print a randomly selected text
-		Print << Sample({ U"Hello!", U"こんにちは", U"你好", U"안녕하세요?" });
-	}
+	
 
 }

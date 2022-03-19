@@ -46,6 +46,9 @@ void Title::update() {
 }
 
 void Title::draw() const {
+	ClearPrint();
+	Print << U"You have {} seconds!"_fmt(LIMIT_TIME);
+
 	for (int32 i = 0; i < NUM_ARK; i++) {
 		if (i % 2 == 0) {
 			ark[i].drawArc(angle[i * 2], angle[i * 2 + 1], 30, 0);

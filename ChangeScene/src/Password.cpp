@@ -38,10 +38,14 @@ void Password::update() {
 		hidePassword();
 	}
 
-	debug();
+	//debug();
 }
 
 void Password::draw() const {
+	ClearPrint();
+	Print << U"Input your password (over 5 words) !!";
+	Print << U"{} seconds later"_fmt(getData().Time.s());
+
 	box_text.draw(Palette::White);
 	font_guide(U"password:").drawAt(p.movedBy(-220, -30), Palette::White);
 	font_guide(U"[delete]:show / hide").draw(p.movedBy(50, 20), Palette::White);

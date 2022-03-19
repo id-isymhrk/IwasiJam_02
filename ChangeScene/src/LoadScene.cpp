@@ -26,12 +26,19 @@ void Load::update() {
 			}
 		}
 	}
-	debug();
+	//debug();
 }
 
 void Load::draw() const {
+	static const double w = 400;
+
+	ClearPrint();
+	Print << U"Wait Loading !!";
+	Print << U"Progress:{}%"_fmt((int32)(install * 100 / w));
+	Print << U"{} seconds later"_fmt(getData().Time.s());
+
 	if (flag_loading) {
-		loading(install);
+		loading(install, w);
 	}
 }
 

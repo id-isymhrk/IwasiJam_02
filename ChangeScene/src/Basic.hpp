@@ -2,7 +2,7 @@
 # include <Siv3D.hpp> // OpenSiv3D v0.6.3
 
 constexpr int32 NUM_SCENE = 4;
-constexpr double LIMIT_TIME = 90;
+constexpr double LIMIT_TIME = 30;
 //シーン名
 enum class State {
 	Title,
@@ -25,5 +25,5 @@ using App = SceneManager<State, GameData>;
 
 
 //全体用の関数
-void loading(double);		//ロードの表現
+void loading(double time, double w);		//ロードの表現
 State sceneRandom(int32);	//遷移するシーン名前を返す関数

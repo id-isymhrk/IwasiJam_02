@@ -29,10 +29,14 @@ void Inside::update() {
 			changeScene(sceneRandom(4));
 		}
 	}
-	debug();
+	//debug();
 }
 
 void Inside::draw() const {
+	ClearPrint();
+	Print << U"Seek Inside Rectangle !!";
+	Print << U"{} seconds later"_fmt(getData().Time.s());
+
 	Scene::SetBackground(Color(time_hit));
 
 	circle_mouse.draw(Palette::Red);
