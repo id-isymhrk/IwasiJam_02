@@ -29,6 +29,19 @@ public:
 class Load : public App::Scene
 {
 private:
+	const Font font;
+
+	String text;
+
+	int32 TestNum = 0;
+
+	double time = 0;
+
+	int length = 0;
+
+	bool flag_loading = true;
+	double install = 0;
+
 public:
 	Load(const InitData& init);
 
