@@ -6,8 +6,9 @@ constexpr Vec2 p(400, 500);
 class Password : public App::Scene
 {
 private:
-	const Font font15;
-	const Font font25;
+	const Font font_guide;
+	const Font font_input;
+	const Font font_hide;
 
 	const Rect box_text;
 
