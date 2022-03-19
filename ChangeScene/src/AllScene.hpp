@@ -3,6 +3,18 @@
 
 constexpr Vec2 p(400, 500);
 
+class Title : public App::Scene
+{
+private:
+	const Font font_title;
+public:
+	Title(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+};
+
 class Password : public App::Scene
 {
 private:
