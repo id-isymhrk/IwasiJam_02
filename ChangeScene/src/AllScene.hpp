@@ -3,9 +3,16 @@
 
 constexpr Vec2 p(400, 500);
 
+constexpr int32 NUM_ARK = 4;
+
 class Title : public App::Scene
 {
 private:
+
+	Array<double> angle;
+	Array<double> angle_speed;
+	Array<Circle> ark;
+
 	const Font font_title;
 public:
 	Title(const InitData& init);
@@ -13,6 +20,8 @@ public:
 	void update();
 	void draw() const;
 	void debug();
+
+	void drawTitle() const;
 };
 
 class Password : public App::Scene
