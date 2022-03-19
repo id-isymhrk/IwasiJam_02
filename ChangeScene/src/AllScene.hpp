@@ -115,3 +115,25 @@ public:
 	void draw() const;
 	void debug();
 };
+
+class Finish:public App::Scene
+{
+private:
+
+	Array<double> angle;
+	Array<double> angle_speed;
+	Array<Circle> ark;
+
+	const Font font_title;
+	const Font font_score;
+
+public:
+	Finish(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+
+	void drawTitle() const;
+	void drawScore() const;
+};

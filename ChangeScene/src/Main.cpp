@@ -4,10 +4,12 @@ void Main()
 {
 	App manager;
 	manager
-		.add<Title>(State::Title)
+		/*.add<Title>(State::Title)
 		.add<Password>(State::ID01_Password)
 		.add<Load>(State::ID02_Load)
-		.add<Default>(State::ID03_Default);
+		.add<Default>(State::ID03_Default)*/
+		//.add<Inside>(State::ID04_Inside)
+		.add<Finish>(State::Finish);
 
 	while (System::Update())
 	{
