@@ -5,6 +5,8 @@ constexpr Vec2 p(400, 500);
 
 constexpr int32 NUM_ARK = 4;
 
+constexpr int32 RECT_EDGE = 240;
+
 class Title : public App::Scene
 {
 private:
@@ -100,6 +102,11 @@ public:
 class Inside : public App::Scene
 {
 private:
+	Circle circle_mouse;
+	RectF rect_hit;
+
+	double time_hit = 0;
+
 public:
 	Inside(const InitData& init);
 
