@@ -2,7 +2,7 @@
 # include <Siv3D.hpp> // OpenSiv3D v0.6.3
 
 constexpr int32 NUM_SCENE = 4;
-
+constexpr double LIMIT_TIME = 90;
 //シーン名
 enum class State {
 	Title,
@@ -15,7 +15,7 @@ enum class State {
 //ゲームデータ
 struct GameData {
 	int32 Score = 0;
-	double Time = 0;
+	Stopwatch Time{ StartImmediately::No };
 };
 
 //シーン管理
