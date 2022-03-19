@@ -66,6 +66,8 @@ private:
 	// 絵文字を描画する座標 | Coordinates of the emoji
 	Vec2 emojiPos{ 300, 150 };
 
+	int32 count_button = 0;
+
 public:
 	Default(const InitData& init);
 

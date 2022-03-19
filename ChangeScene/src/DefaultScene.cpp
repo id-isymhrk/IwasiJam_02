@@ -14,12 +14,11 @@ Default::Default(const InitData& init)
 
 	// `font` が絵文字用フォントも使えるようにする | Set emojiFont as a fallback
 	font60.addFallback(emojiFont);
+
+	count_button = 0;
 }
 
-void Default::update() {
-
-	// サイズをアニメーションさせて絵文字を描く | Draw a texture with animated size
-	emoji.resized(100 + Periodic::Sine0_1(1s) * 20).drawAt(emojiPos);	
+void Default::update() {	
 
 	// もし [Button] が押されたら | When [Button] is pushed
 	if (SimpleGUI::Button(U"Button", Vec2{ 640, 40 }))
@@ -27,8 +26,11 @@ void Default::update() {
 		// 画面内のランダムな場所に座標を移動
 		// Move the coordinates to a random position in the screen
 		emojiPos = RandomVec2(Scene::Rect());
+		count_button++;
 
-		changeScene(sceneRandom(3));
+		if (count_button > 2) {
+			changeScene(sceneRandom(3));
+		}
 	}
 
 	debug();
@@ -38,6 +40,9 @@ void Default::draw() const {
 
 	// テクスチャを描く | Draw a texture
 	texture.draw(200, 200);
+
+	// サイズをアニメーションさせて絵文字を描く | Draw a texture with animated size
+	emoji.resized(100 + Periodic::Sine0_1(1s) * 20).drawAt(emojiPos);
 
 	// テキストを画面の中心に描く | Put a text in the middle of the screen
 	font60(U"Hello, Siv3D!🚀").drawAt(Scene::Center(), Palette::Black);

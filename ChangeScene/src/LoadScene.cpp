@@ -3,7 +3,8 @@
 Load::Load(const InitData& init)
 	:IScene(init)
 {
-
+	// 背景の色を設定 | Set background color
+	Scene::SetBackground(Palette::Black);
 }
 
 void Load::update() {

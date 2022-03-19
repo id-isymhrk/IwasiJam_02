@@ -14,7 +14,8 @@ enum class State {
 
 //ゲームデータ
 struct GameData {
-	int32 Score;
+	int32 Score = 0;
+	double Time = 0;
 };
 
 //シーン管理
