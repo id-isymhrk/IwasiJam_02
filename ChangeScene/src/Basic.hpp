@@ -3,6 +3,12 @@
 
 constexpr int32 NUM_SCENE = 4;
 constexpr double LIMIT_TIME = 30;
+
+constexpr int32 SCORE_01 = 10;
+constexpr int32 SCORE_02 = 25;
+constexpr int32 SCORE_03 = 20;
+constexpr int32 SCORE_04 = 30;
+
 //シーン名
 enum class State {
 	Title,

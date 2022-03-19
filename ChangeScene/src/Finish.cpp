@@ -12,6 +12,9 @@ Finish::Finish(const InitData& init)
 
 	font_title.setBufferThickness(4);
 
+
+	score = U"Score : {}"_fmt(getData().Score);
+
 	for (int i = 0; i < NUM_ARK; i++) {
 		ark << Circle{ Scene::Width() / 2,Scene::Height() / 2,75 * (1 + i) };
 		angle << Random<double>(90_deg, 180_deg);
@@ -79,7 +82,6 @@ void Finish::drawTitle() const{
 }
 
 void Finish::drawScore() const {
-	static const String score = U"Score : {}"_fmt(getData().Score);
 	static const double outlineScale = 0.4;
 	static const ColorF outlineColor{ 0.0, 0.3, 0.6 };
 

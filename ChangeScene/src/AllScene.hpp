@@ -124,6 +124,8 @@ private:
 	Array<double> angle_speed;
 	Array<Circle> ark;
 
+	String score;
+
 	const Font font_title;
 	const Font font_score;
 

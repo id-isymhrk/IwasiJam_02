@@ -41,6 +41,7 @@ void Default::update() {
 
 			if (count_button > 2) {
 				getData().Time.pause();
+				getData().Score += SCORE_03;
 				changeScene(sceneRandom(3));
 			}
 		}
@@ -53,6 +54,7 @@ void Default::draw() const {
 	ClearPrint();
 	Print << U"Push [Button] !!";
 	Print << U"{} seconds later"_fmt(getData().Time.s());
+	Print << U"{} points"_fmt(getData().Score);
 	// テキストを画面にデバッグ出力 | Print a text
 	Print << U"";
 	Print << U"You don't have to push [A] key";

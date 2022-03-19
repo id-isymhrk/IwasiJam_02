@@ -5,6 +5,8 @@ Title::Title(const InitData& init)
 {
 	Scene::SetBackground(Color{ 0, 34, 49 });
 
+	getData().Score = 0;
+
 	font_title.setBufferThickness(4);
 
 	for (int i = 0; i < NUM_ARK; i++) {

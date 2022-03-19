@@ -20,8 +20,9 @@ void Password::update() {
 		if (KeyEnter.down()) {
 			if (text_input.size() > 4) {
 				//シーン移動
+				getData().Time.pause();
+				getData().Score += SCORE_01;
 				changeScene(sceneRandom(1));
-				//changeScene(State::ID03_Default);
 			}
 			else {
 				if (text_input) {
@@ -45,6 +46,7 @@ void Password::draw() const {
 	ClearPrint();
 	Print << U"Input your password (over 5 words) !!";
 	Print << U"{} seconds later"_fmt(getData().Time.s());
+	Print << U"{} points"_fmt(getData().Score);
 
 	box_text.draw(Palette::White);
 	font_guide(U"password:").drawAt(p.movedBy(-220, -30), Palette::White);

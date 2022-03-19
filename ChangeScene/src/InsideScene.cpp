@@ -20,13 +20,15 @@ void Inside::update() {
 	else {
 		circle_mouse = Circle{ Cursor::Pos(),40 };
 
-		if (rect_hit.contains(circle_mouse) and time_hit < 255) {
-			time_hit += 2;
-		}
-		if (time_hit > 255) {
+		
+		if (time_hit >= 255) {
 			time_hit = 255;
 			getData().Time.pause();
+			getData().Score += SCORE_04;
 			changeScene(sceneRandom(4));
+		}
+		else if (rect_hit.contains(circle_mouse)) {
+			time_hit += 1.5;
 		}
 	}
 	//debug();
@@ -36,6 +38,7 @@ void Inside::draw() const {
 	ClearPrint();
 	Print << U"Seek Inside Rectangle !!";
 	Print << U"{} seconds later"_fmt(getData().Time.s());
+	Print << U"{} points"_fmt(getData().Score);
 
 	Scene::SetBackground(Color(time_hit));
 

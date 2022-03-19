@@ -19,6 +19,8 @@ void Load::update() {
 		if (flag_loading) {
 			if (400 <= install) {
 				//changeScene(State::Title);
+				getData().Time.pause();
+				getData().Score += SCORE_02;
 				changeScene(sceneRandom(2));
 			}
 			else {
@@ -36,6 +38,7 @@ void Load::draw() const {
 	Print << U"Wait Loading !!";
 	Print << U"Progress:{}%"_fmt((int32)(install * 100 / w));
 	Print << U"{} seconds later"_fmt(getData().Time.s());
+	Print << U"{} points"_fmt(getData().Score);
 
 	if (flag_loading) {
 		loading(install, w);
