@@ -6,6 +6,8 @@ Default::Default(const InitData& init)
 {
 	ClearPrint();
 
+	getData().Time.start();
+
 	// テキストを画面にデバッグ出力 | Print a text
 	Print << U"Push [Button] !!";
 	Print << U"You don't have to push [A] key";
@@ -21,16 +23,22 @@ Default::Default(const InitData& init)
 
 void Default::update() {	
 
-	// もし [Button] が押されたら | When [Button] is pushed
-	if (SimpleGUI::Button(U"Button", Vec2{ 640, 40 }))
-	{
-		// 画面内のランダムな場所に座標を移動
-		// Move the coordinates to a random position in the screen
-		emojiPos = RandomVec2(Scene::Rect());
-		count_button++;
+	if (getData().Time.sF() > LIMIT_TIME) {
+		changeScene(State::Finish);
+	}
+	else {
+		// もし [Button] が押されたら | When [Button] is pushed
+		if (SimpleGUI::Button(U"Button", Vec2{ 640, 40 }))
+		{
+			// 画面内のランダムな場所に座標を移動
+			// Move the coordinates to a random position in the screen
+			emojiPos = RandomVec2(Scene::Rect());
+			count_button++;
 
-		if (count_button > 2) {
-			changeScene(sceneRandom(3));
+			if (count_button > 2) {
+				getData().Time.pause();
+				changeScene(sceneRandom(3));
+			}
 		}
 	}
 

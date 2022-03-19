@@ -3,6 +3,10 @@
 Inside::Inside(const InitData& init)
 	:IScene(init)
 {
+	ClearPrint();
+
+	getData().Time.start();
+
 	Scene::SetBackground(Palette::Black);
 
 	rect_hit = RectF(Arg::center(Random<double>(RECT_EDGE / 2, Scene::Width() - RECT_EDGE / 2), Random<double>(RECT_EDGE / 2, Scene::Height() - RECT_EDGE / 2)), RECT_EDGE);
@@ -10,15 +14,20 @@ Inside::Inside(const InitData& init)
 }
 
 void Inside::update() {
-
-	circle_mouse = Circle{ Cursor::Pos(),40 };
-
-	if (rect_hit.contains(circle_mouse) and time_hit < 255) {
-		time_hit += 2;
+	if (getData().Time.sF() > LIMIT_TIME) {
+		changeScene(State::Finish);
 	}
-	if (time_hit > 255) {
-		time_hit = 255;
-		changeScene(sceneRandom(4));
+	else {
+		circle_mouse = Circle{ Cursor::Pos(),40 };
+
+		if (rect_hit.contains(circle_mouse) and time_hit < 255) {
+			time_hit += 2;
+		}
+		if (time_hit > 255) {
+			time_hit = 255;
+			getData().Time.pause();
+			changeScene(sceneRandom(4));
+		}
 	}
 	debug();
 }

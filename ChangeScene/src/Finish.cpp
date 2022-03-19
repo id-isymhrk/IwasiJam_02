@@ -4,6 +4,10 @@ Finish::Finish(const InitData& init)
 	:IScene(init),
 	font_title{ FontMethod::MSDF, 40, Typeface::Bold },font_score{ FontMethod::MSDF, 40, Typeface::Bold }
 {
+	ClearPrint();
+
+	getData().Time.reset();
+
 	Scene::SetBackground(Color{ 220 });
 
 	font_title.setBufferThickness(4);

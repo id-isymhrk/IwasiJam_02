@@ -3,34 +3,40 @@
 Password::Password(const InitData& init)
 	:IScene(init), font_guide(15), font_input(30),font_hide(25), box_text(Arg::center(400, 500), 400, 30)
 {
+	ClearPrint();
+
+	getData().Time.start();
+
 	// 背景の色を設定 | Set background color
 	Scene::SetBackground(Palette::Black);
-
-	ClearPrint();
 }
 
 void Password::update() {
 	static int32 miss_count = 0;
-
-	if (KeyEnter.down()) {
-		if (text_input.size() > 4) {
-			//シーン移動
-			changeScene(sceneRandom(1));
-			//changeScene(State::ID03_Default);
-		}
-		else {
-			if (text_input) {
-				text_input.clear();
-			}
-			Print << U"You missed password (total:{})"_fmt(++miss_count);
-		}		
+	if (getData().Time.sF() > LIMIT_TIME) {
+		changeScene(State::Finish);
 	}
 	else {
-		//パスワード入力
-		TextInput::UpdateText(text_input);
-	}
+		if (KeyEnter.down()) {
+			if (text_input.size() > 4) {
+				//シーン移動
+				changeScene(sceneRandom(1));
+				//changeScene(State::ID03_Default);
+			}
+			else {
+				if (text_input) {
+					text_input.clear();
+				}
+				Print << U"You missed password (total:{})"_fmt(++miss_count);
+			}
+		}
+		else {
+			//パスワード入力
+			TextInput::UpdateText(text_input);
+		}
 
-	hidePassword();
+		hidePassword();
+	}
 
 	debug();
 }
