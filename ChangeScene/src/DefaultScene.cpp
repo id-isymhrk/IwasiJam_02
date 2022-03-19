@@ -18,9 +18,6 @@ Default::Default(const InitData& init)
 
 void Default::update() {
 
-	// テキストを画面の中心に描く | Put a text in the middle of the screen
-	font60(U"Hello, Siv3D!🚀").drawAt(Scene::Center(), Palette::Black);
-
 	// サイズをアニメーションさせて絵文字を描く | Draw a texture with animated size
 	emoji.resized(100 + Periodic::Sine0_1(1s) * 20).drawAt(emojiPos);	
 
@@ -39,6 +36,9 @@ void Default::draw() const {
 
 	// テクスチャを描く | Draw a texture
 	texture.draw(200, 200);
+
+	// テキストを画面の中心に描く | Put a text in the middle of the screen
+	font60(U"Hello, Siv3D!🚀").drawAt(Scene::Center(), Palette::Black);
 
 	// マウスカーソルに追随する半透明な円を描く | Draw a red transparent circle that follows the mouse cursor
 	Circle{ Cursor::Pos(), 40 }.draw(ColorF{ 1, 0, 0, 0.5 });
