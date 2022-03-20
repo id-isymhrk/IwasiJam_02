@@ -2,7 +2,7 @@
 
 void Main()
 {
-	Window::SetTitle(U"Loop Scenes!");
+	Window::SetTitle(U"Change Scenes!");
 
 	Window::Resize(800, 600);
 	Scene::SetResizeMode(ResizeMode::Keep);

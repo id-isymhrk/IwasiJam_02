@@ -73,7 +73,7 @@ void Title::debug() {
 }
 
 void Title::drawTitle() const {
-	static const String text = U"Loop Scenes!";
+	static const String text = U"Change Scenes!";
 	static const double outlineScale = 0.4;
 	static const ColorF outlineColor{ 0.0, 0.3, 0.6 };
 	static const double fontSize = 100;
