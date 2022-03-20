@@ -114,6 +114,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Basic.cpp" />
+    <ClCompile Include="src\Chain.cpp" />
     <ClCompile Include="src\DefaultScene.cpp" />
     <ClCompile Include="src\Finish.cpp" />
     <ClCompile Include="src\InsideScene.cpp" />
