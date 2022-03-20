@@ -7,6 +7,9 @@ void Main()
 	Window::Resize(800, 600);
 	Scene::SetResizeMode(ResizeMode::Keep);
 
+	const Audio audio{ Audio::Stream, U"shatou.mp3", Loop::Yes };
+	audio.play();
+
 	App manager;
 	manager
 		.add<Title>(State::Title)
@@ -15,6 +18,7 @@ void Main()
 		.add<Default>(State::ID03_Default)
 		.add<Inside>(State::ID04_Inside)
 		.add<Chain>(State::ID05_Chain)
+		.add<OddEven>(State::ID06_OddEven)
 		.add<Finish>(State::Finish);
 
 	while (System::Update())
