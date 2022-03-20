@@ -2,6 +2,11 @@
 
 void Main()
 {
+	Window::SetTitle(U"Change Scene!");
+
+	Window::Resize(800, 600);
+	Scene::SetResizeMode(ResizeMode::Keep);
+
 	App manager;
 	manager/*
 		.add<Title>(State::Title)
