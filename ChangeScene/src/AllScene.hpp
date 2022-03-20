@@ -116,6 +116,26 @@ public:
 	void debug();
 };
 
+constexpr int32 CHAIN_NUM = 5;
+constexpr int32 RADIUS = 40;
+constexpr double ANGLE_ROTATE = 2_deg;
+
+class Chain :public App::Scene
+{
+private:
+	Array<Vec3> chains_info;	//x:中心からの距離 y:角度
+	Array<double> angle_rotate;
+
+	const Font font_value;
+
+public:
+	Chain(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+};
+
 class Finish:public App::Scene
 {
 private:

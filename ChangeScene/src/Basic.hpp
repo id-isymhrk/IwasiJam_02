@@ -16,6 +16,7 @@ enum class State {
 	ID02_Load,
 	ID03_Default,
 	ID04_Inside,
+	ID05_Chain,
 	Finish
 };
 
