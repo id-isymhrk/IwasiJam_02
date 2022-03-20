@@ -120,6 +120,7 @@
     <ClCompile Include="src\InsideScene.cpp" />
     <ClCompile Include="src\LoadScene.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\OddEven.cpp" />
     <ClCompile Include="src\Password.cpp" />
     <ClCompile Include="src\Title.cpp" />
     <ClCompile Include="stdafx.cpp">
