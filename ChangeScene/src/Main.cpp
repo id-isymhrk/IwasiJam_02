@@ -2,18 +2,18 @@
 
 void Main()
 {
-	Window::SetTitle(U"Change Scene!");
+	Window::SetTitle(U"Change Scenes!");
 
 	Window::Resize(800, 600);
 	Scene::SetResizeMode(ResizeMode::Keep);
 
 	App manager;
-	manager/*
+	manager
 		.add<Title>(State::Title)
 		.add<Password>(State::ID01_Password)
 		.add<Load>(State::ID02_Load)
 		.add<Default>(State::ID03_Default)
-		.add<Inside>(State::ID04_Inside)*/
+		.add<Inside>(State::ID04_Inside)
 		.add<Chain>(State::ID05_Chain)
 		.add<Finish>(State::Finish);
 
