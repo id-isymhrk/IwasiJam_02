@@ -1,7 +1,7 @@
 ﻿#pragma once
 # include <Siv3D.hpp> // OpenSiv3D v0.6.3
 
-constexpr int32 NUM_SCENE = 5;
+constexpr int32 NUM_SCENE = 6;
 constexpr double LIMIT_TIME = 30;
 
 constexpr int32 SCORE_01 = 15;
