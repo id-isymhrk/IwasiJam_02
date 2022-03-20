@@ -123,8 +123,14 @@ constexpr double ANGLE_ROTATE = 2_deg;
 class Chain :public App::Scene
 {
 private:
-	Array<Vec3> chains_info;	//x:中心からの距離 y:角度
+	int32 num_check = 0;
+
+	Array<Vec2> chains_info;	//x:中心からの距離 y:角度
+	Array<Vec2> pos_chain;
 	Array<double> angle_rotate;
+	Array<int32> chains_id;
+
+	Array<Circle> chains;
 
 	const Font font_value;
 

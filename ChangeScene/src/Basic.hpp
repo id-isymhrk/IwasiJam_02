@@ -8,6 +8,7 @@ constexpr int32 SCORE_01 = 10;
 constexpr int32 SCORE_02 = 25;
 constexpr int32 SCORE_03 = 20;
 constexpr int32 SCORE_04 = 30;
+constexpr int32 SCORE_05 = 50;
 
 //シーン名
 enum class State {
