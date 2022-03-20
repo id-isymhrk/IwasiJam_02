@@ -34,7 +34,11 @@ State sceneRandom(int32 num) {
 	case 5:
 		return State::ID05_Chain;
 		break;
+	case 6:
+		return State::ID06_OddEven;
+		break;
 	default:
+		return State::Finish;
 		break;
 	}
 }

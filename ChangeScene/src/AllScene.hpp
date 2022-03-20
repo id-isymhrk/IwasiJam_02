@@ -142,6 +142,29 @@ public:
 	void debug();
 };
 
+constexpr int32 NUM_QUESTION = 4;
+
+class OddEven :public App::Scene
+{
+private:
+	const Font font_number;
+	const Font font_select;
+
+	Array<int32> num_random;
+
+	int32 status = 0;
+
+	const RectF rect_odd;
+	const RectF rect_even;
+
+public:
+	OddEven(const InitData& init);
+
+	void update();
+	void draw() const;
+	void debug();
+};
+
 class Finish:public App::Scene
 {
 private:
